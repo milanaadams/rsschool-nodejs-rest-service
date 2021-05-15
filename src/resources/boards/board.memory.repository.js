@@ -1,4 +1,4 @@
-const DB = require('../../utils/inMemoryDB');
+const DB = require('../../utils/dbUtils');
 const TASK = require('../tasks/task.memory.repository');
 const { NotFoundError } = require('../../errors/notFound');
 
