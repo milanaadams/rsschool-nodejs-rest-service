@@ -5,7 +5,7 @@ const  db = {
 }
 
 function getAllEntities(tableName) {
-  return db[tableName].filter(task => task);
+  return db[tableName].filter(entry => entry);
 }
 
 function getEntity(tableName, id) {
@@ -38,10 +38,24 @@ function deleteEntity(tableName, id) {
   return entity;
 }
 
+function getAllEntitiesByBoardId(tableName, boardId) {
+  const table = db[tableName];
+  const entities = table.filter(entry => entry.boardId === boardId);
+  return entities;
+}
+
+function getEntityByBoardId(tableName, boardId, id) {
+  const entities = getAllEntitiesByBoardId(tableName, boardId);
+  const entity = entities.filter(entry => entry.id === id)[0];
+  return entity;
+}
+
 module.exports = {
   getAllEntities,
   getEntity,
   createEntity,
   updateEntity,
-  deleteEntity
+  deleteEntity,
+  getAllEntitiesByBoardId,
+  getEntityByBoardId
 }
