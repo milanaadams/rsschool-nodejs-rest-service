@@ -13,6 +13,11 @@ class User {
     this.password = password;
   }
 
+  /**
+   * Generates object from the User instance excluding sensetive information such as password
+   * @param {User} user 
+   * @returns {object}
+   */
   static toResponse(user) {
     const { id, name, login } = user;
     return { id, name, login };
