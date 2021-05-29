@@ -1,6 +1,7 @@
-const boardService = require('./board.service');
+import { Request, Response, NextFunction } from 'express';
+import * as boardService from './board.service';
 
-const getAll = async (req, res, next) => {
+const getAll = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const board = await boardService.getAll();
     res.json(board);
@@ -9,7 +10,7 @@ const getAll = async (req, res, next) => {
   }
 }
 
-const getById = async (req, res, next) => {
+const getById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const board = await boardService.getById(req.params.id);
     res.json(board);
@@ -18,7 +19,7 @@ const getById = async (req, res, next) => {
   }
 }
 
-const createBoard = async (req, res, next) => {
+const createBoard = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const board = await boardService.createBoard(req.body);
     res.status(201).json(board);
@@ -27,7 +28,7 @@ const createBoard = async (req, res, next) => {
   }
 }
 
-const updateBoard = async (req, res, next) => {
+const updateBoard = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const board = await boardService.updateBoard(req.params.id, req.body);
     res.json(board);
@@ -36,7 +37,7 @@ const updateBoard = async (req, res, next) => {
   }
 }
 
-const deleteBoard = async (req, res, next) => {
+const deleteBoard = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     await boardService.deleteBoard(req.params.id);
     res.sendStatus(200);
@@ -45,4 +46,4 @@ const deleteBoard = async (req, res, next) => {
   }
 }
 
-module.exports = { getAll, getById, createBoard, updateBoard, deleteBoard };
+export { getAll, getById, createBoard, updateBoard, deleteBoard };
