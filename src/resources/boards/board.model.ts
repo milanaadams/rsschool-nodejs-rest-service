@@ -1,6 +1,25 @@
-const uuid = require('uuid');
+import * as uuid from 'uuid';
 
-class Board {
+interface IColumn {
+  id: string;
+  title: string;
+  order: number;
+
+}
+
+export interface IBoard {
+  id: string;
+  title: string;
+  columns: Array<IColumn>;
+}
+
+export class Board implements IBoard {
+  id: string;
+
+  title: string;
+
+  columns: Array<IColumn>;
+  
   constructor({
     id = uuid.v4(),
     title = 'BOARD',
@@ -17,5 +36,3 @@ class Board {
     this.columns = columns.map((column) => ({id: uuid.v4(), ...column, }));
   }
 }
-
-module.exports = Board;
