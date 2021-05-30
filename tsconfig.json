@@ -6,8 +6,16 @@
     "outDir": "./dist",
     "moduleResolution": "node",
     "module": "commonjs",
+    "noUncheckedIndexedAccess": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": false,
+    "noUnusedLocals": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false
   },
   "exclude": [
     "node_modules"
