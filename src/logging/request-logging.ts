@@ -6,6 +6,7 @@ const { combine, timestamp, printf } = format;
 const requestLoggerFormat = printf(({ message, timestamp }) => `${timestamp} ${message}`);
 
 const logger = createLogger({
+  level: 'info',
   format: combine(
     timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
@@ -24,7 +25,26 @@ const logger = createLogger({
   ],
 });
 
+const errLogger = createLogger({
+  level: 'error',
+  format: combine(
+    timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    }),
+    requestLoggerFormat,
+  ),
+  transports: [
+    new transports.File({
+      filename: './src/logging/error-logs.log',
+      level: 'error'
+    })
+  ],
+});
+
+
+
 function requestLogger(req: Request, res: Response, next: CallableFunction): void {
+  if(req.body.password) req.body.password = 'Hidden';
   const {method} = req;
   const {url} = req;
   const query = Object.getOwnPropertyNames(req.query).length ? `\nQuery: ${JSON.stringify(req.query)}` : '';
@@ -37,7 +57,7 @@ function requestLogger(req: Request, res: Response, next: CallableFunction): voi
 }
 
 function errorLogger(err: Error, _req: Request, res: Response, next: CallableFunction): void {
-  logger.error(`Response status code: ${res.statusCode} \nResponse message: ${err.message}`);
+  errLogger.error(`Response status code: ${res.statusCode} \nResponse message: ${err.message}`);
   next();
 }
 

@@ -1,0 +1,159 @@
+2021-06-04 23:31:00 Method: GET | Path: /users    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /users   
+Body: {"name":"TEST_USER","login":"test_user","password":"Hidden"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: GET | Path: /users/99b6cfde-d1e2-4f22-b6ff-d1c3388f6c8b    
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /users/99b6cfde-d1e2-4f22-b6ff-d1c3388f6c8b    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /users   
+Body: {"name":"TEST_USER","login":"test_user","password":"Hidden"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /users/79997539-ac14-4d8f-9bb0-fe9247377182    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /users   
+Body: {"name":"TEST_USER","login":"test_user","password":"Hidden"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: PUT | Path: /users/8e879943-33bb-4f18-81e9-cca095f35591   
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"Hidden","id":"8e879943-33bb-4f18-81e9-cca095f35591"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: GET | Path: /users/8e879943-33bb-4f18-81e9-cca095f35591    
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /users/8e879943-33bb-4f18-81e9-cca095f35591    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /users   
+Body: {"name":"TEST_USER","login":"test_user","password":"Hidden"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /users/52e3e5a6-f9db-439f-b12a-a768714c61e7    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /users   
+Body: {"name":"TEST_USER","login":"test_user","password":"Hidden"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks   
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"9123800a-36d2-4a91-8cbf-ac15bff876c3","boardId":"5caab55d-56b9-4ffd-95cb-79f3ab13d90d"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks   
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"9123800a-36d2-4a91-8cbf-ac15bff876c3","boardId":"5caab55d-56b9-4ffd-95cb-79f3ab13d90d"} 
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /users/9123800a-36d2-4a91-8cbf-ac15bff876c3    
+Response status code: 400
+2021-06-04 23:31:00 Method: GET | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks/9006f6bb-4791-4acf-a375-8edfb25ea48a    
+Response status code: 400
+2021-06-04 23:31:00 Method: GET | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks/93174e68-7753-49ff-b45d-edc1ee8cf349    
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks/9006f6bb-4791-4acf-a375-8edfb25ea48a    
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d/tasks/93174e68-7753-49ff-b45d-edc1ee8cf349    
+Response status code: 400
+2021-06-04 23:31:00 Method: DELETE | Path: /boards/5caab55d-56b9-4ffd-95cb-79f3ab13d90d    
+Response status code: 400
+2021-06-04 23:31:00 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/39862a82-19fb-43f7-b83e-60ec373858db    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/b0b19a6a-d295-4d31-8906-cfb243a75319    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: PUT | Path: /boards/1d0bdc54-b73a-4783-82f4-934799647653   
+Body: {"id":"1d0bdc54-b73a-4783-82f4-934799647653","title":"Autotest updated board","columns":[{"id":"5ab38f69-fcd5-4ae2-bdb4-1d5b6991ee69","title":"Backlog","order":1},{"id":"a4369078-fe0c-41e5-9cbe-9f1c5bae401a","title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/1d0bdc54-b73a-4783-82f4-934799647653    
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/1d0bdc54-b73a-4783-82f4-934799647653    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/784c9bce-4f33-4a3f-b618-3d4f3aedf8d1    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/784c9bce-4f33-4a3f-b618-3d4f3aedf8d1    
+Response status code: 404
+2021-06-04 23:31:01 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks   
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"921889ec-e1be-4d03-a82f-05a97055dfe7","userId":null,"columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks   
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"921889ec-e1be-4d03-a82f-05a97055dfe7","userId":null,"columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks   
+Body: {"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"921889ec-e1be-4d03-a82f-05a97055dfe7","userId":null,"columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks   
+Body: {"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"921889ec-e1be-4d03-a82f-05a97055dfe7","userId":null,"columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks   
+Body: {"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"921889ec-e1be-4d03-a82f-05a97055dfe7","userId":null,"columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/803d43d7-0ecb-45ea-b391-95ff425d93a0    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/849244a6-c0ac-4114-812e-219cb8e139c3    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/40517595-576b-4a3d-ba3c-aecf3d40a7e2    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/f5ef06cc-cce6-44be-a559-749403d8b8f3    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/6f4d9d24-f54b-4eb1-a0b0-d0f7451588e5    
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/803d43d7-0ecb-45ea-b391-95ff425d93a0    
+Response status code: 404
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/849244a6-c0ac-4114-812e-219cb8e139c3    
+Response status code: 404
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/40517595-576b-4a3d-ba3c-aecf3d40a7e2    
+Response status code: 404
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/f5ef06cc-cce6-44be-a559-749403d8b8f3    
+Response status code: 404
+2021-06-04 23:31:01 Method: GET | Path: /boards/921889ec-e1be-4d03-a82f-05a97055dfe7/tasks/6f4d9d24-f54b-4eb1-a0b0-d0f7451588e5    
+Response status code: 404
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/39862a82-19fb-43f7-b83e-60ec373858db    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards   
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]} 
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks   
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"965f0b57-398b-4873-9495-222d216eb5ce","columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/2b9a3f6f-69e8-4795-a99c-5b8690e31fca    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks   
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"965f0b57-398b-4873-9495-222d216eb5ce","columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/f1dc3139-a13c-4fc2-be29-6bcdf06f3c77    
+Response status code: 400
+2021-06-04 23:31:01 Method: POST | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks   
+Body: {"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"965f0b57-398b-4873-9495-222d216eb5ce","columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: PUT | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/0075e150-8d96-4b72-b17f-34784e2ea2b4   
+Body: {"id":"0075e150-8d96-4b72-b17f-34784e2ea2b4","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"965f0b57-398b-4873-9495-222d216eb5ce","columnId":null} 
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/0075e150-8d96-4b72-b17f-34784e2ea2b4    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/2b9a3f6f-69e8-4795-a99c-5b8690e31fca    
+Response status code: 400
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/2b9a3f6f-69e8-4795-a99c-5b8690e31fca    
+Response status code: 400
+2021-06-04 23:31:01 Method: GET | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce/tasks/2b9a3f6f-69e8-4795-a99c-5b8690e31fca    
+Response status code: 404
+2021-06-04 23:31:01 Method: DELETE | Path: /boards/965f0b57-398b-4873-9495-222d216eb5ce    
+Response status code: 400

@@ -24,10 +24,10 @@ const getById = (req: Request, res: Response, next: NextFunction): void => {
 
 const createUser = (req: Request, res: Response, next: NextFunction): void => {
   try {
-    /* const user = usersService.createUser(req.body);
+    const user = usersService.createUser(req.body);
     res.status(201).json(User.toResponse(user));
-    next(); */
-    throw new Error('Oops, not created')
+    next();
+    // throw new Error('Oops, not created')
   } catch(err) {
     next(err);
   }
