@@ -1,13 +1,2 @@
-2021-06-04 14:51:57 Method: GET | Path: /users    
-Response status code: 304
-2021-06-04 14:53:24 Method: POST | Path: /users   
-Body: {"name":"string","login":"string","password":"string"} 
-Response status code: 201
-2021-06-04 14:54:06 Method: PUT | Path: /users/32f06524-b702-4230-8f03-3e4716b216a0   
-Body: {"name":"string","login":"string","password":"string"} 
-Response status code: 200
-2021-06-04 14:54:07 Method: PUT | Path: /users/32f06524-b702-4230-8f03-3e4716b216a0   
-Body: {"name":"string","login":"string","password":"string"} 
-Response status code: 200
-2021-06-04 14:55:04 Method: GET | Path: /users    
-Response status code: 200
+2021-06-04 15:23:36 Response status code: 500 
+Response message: Oops, not created

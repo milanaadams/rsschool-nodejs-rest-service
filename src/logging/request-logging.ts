@@ -36,8 +36,8 @@ function requestLogger(req: Request, res: Response, next: CallableFunction): voi
   next();
 }
 
-function errorLogger(_req: Request, res: Response, next: CallableFunction): void {
-  logger.error(`Response status code: ${res.statusCode} \nResponse message: ${res.statusMessage}`);
+function errorLogger(err: Error, _req: Request, res: Response, next: CallableFunction): void {
+  logger.error(`Response status code: ${res.statusCode} \nResponse message: ${err.message}`);
   next();
 }
 
