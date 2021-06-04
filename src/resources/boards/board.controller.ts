@@ -5,6 +5,7 @@ const getAll = async (req: Request, res: Response, next: NextFunction): Promise<
   try {
     const board = await boardService.getAll();
     res.json(board);
+    next();
   } catch(err) {
     next(err);
   }
@@ -14,6 +15,7 @@ const getById = async (req: Request, res: Response, next: NextFunction): Promise
   try {
     const board = await boardService.getById(req.params.id);
     res.json(board);
+    next();
   } catch(err) {
     next(err);
   }
@@ -23,6 +25,7 @@ const createBoard = async (req: Request, res: Response, next: NextFunction): Pro
   try {
     const board = await boardService.createBoard(req.body);
     res.status(201).json(board);
+    next();
   } catch(err) {
     next(err);
   }
@@ -32,6 +35,7 @@ const updateBoard = async (req: Request, res: Response, next: NextFunction): Pro
   try {
     const board = await boardService.updateBoard(req.params.id, req.body);
     res.json(board);
+    next();
   } catch(err) {
     next(err);
   }
@@ -41,6 +45,7 @@ const deleteBoard = async (req: Request, res: Response, next: NextFunction): Pro
   try {
     await boardService.deleteBoard(req.params.id);
     res.sendStatus(200);
+    next();
   } catch(err) {
     next(err);
   }

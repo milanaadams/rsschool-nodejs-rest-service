@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { NotFoundError } from './notFound';
+// import { errorLogger } from '../logging/request-logging';
 /**
  * Middleware for handling errors
  * @param {Error} err 
@@ -11,5 +12,6 @@ export function handleErrors(err: NotFoundError, req: Request, res: Response, ne
   if (!res.headersSent) {
     res.status(err.status || 500).json({ message: err.message || 'Something went went' });
   }
+  // errorLogger(req, res, next);
   next();
 }
