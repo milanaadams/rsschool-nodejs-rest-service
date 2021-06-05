@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { finished } from 'stream';
 import { createLogger, format, transports } from 'winston';
 
 const { combine, timestamp, printf } = format;
@@ -17,10 +18,6 @@ const logger = createLogger({
     new transports.File({
       filename: './src/logging/info-logs.log',
       level: 'info'
-    }),
-    new transports.File({
-      filename: './src/logging/error-logs.log',
-      level: 'error'
     })
   ],
 });
@@ -50,13 +47,16 @@ function requestLogger(req: Request, res: Response, next: CallableFunction): voi
   const query = Object.getOwnPropertyNames(req.query).length ? `\nQuery: ${JSON.stringify(req.query)}` : '';
   const params = Object.getOwnPropertyNames(req.params).length ? `\nParams: ${JSON.stringify(req.params)}` : '';
   const body = Object.getOwnPropertyNames(req.body).length ? `\nBody: ${JSON.stringify(req.body)}` : '';
-  const responseCode = res.statusCode;
 
-  logger.info(`Method: ${method} | Path: ${url} ${query} ${params} ${body} \nResponse status code: ${responseCode}`);
+  logger.info(`Method: ${method} | Path: ${url} ${query} ${params} ${body}`);
   next();
+
+  finished(res, () => {
+    logger.info(`Response status code: ${res.statusCode}`);
+  })
 }
 
-function errorLogger(err: Error, _req: Request, res: Response, next: CallableFunction): void {
+function errorLogger(err: Error, req: Request, res: Response, next: CallableFunction): void {
   errLogger.error(`Response status code: ${res.statusCode} \nResponse message: ${err.message}`);
   next();
 }

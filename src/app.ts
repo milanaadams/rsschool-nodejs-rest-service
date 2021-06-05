@@ -9,6 +9,7 @@ import { router as taskRouter } from './resources/tasks/task.router';
 import { handleErrors } from './errors/handleErrors';
 import { requestLogger, errorLogger } from './logging/request-logging';
 import { getInvalidRoute } from './middleware/handleInvalidRoute';
+import { handleExceptions } from './errors/handleExceptions';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
@@ -24,12 +25,17 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
+app.use(requestLogger);
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
 app.use(getInvalidRoute);
 app.use(handleErrors);
 app.use(errorLogger);
-app.use(requestLogger);
+
+process.on('uncaughtException', (err) => { handleExceptions(err, 'Uncaught Exception detected') });
+// throw Error('Oops!');
+process.on('unhandledRejection', (err: Error) => { handleExceptions(err, 'Unhandled Promise Rejection detected') });
+// Promise.reject(Error('Oops!'));
 
 export { app };
