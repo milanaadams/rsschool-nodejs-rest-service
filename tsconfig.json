@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "noImplicitAny": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "noUncheckedIndexedAccess": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": false,
+    "noUnusedLocals": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": false
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
