@@ -7,7 +7,7 @@ import { router as userRouter } from './resources/users/user.router';
 import { router as boardRouter } from './resources/boards/board.router';
 import { router as taskRouter } from './resources/tasks/task.router';
 import { handleErrors } from './errors/handleErrors';
-import { requestLogger, errorLogger } from './logging/request-logging';
+import { requestLogger, errorLogger } from './logging/logger';
 import { getInvalidRoute } from './middleware/handleInvalidRoute';
 import { handleExceptions } from './errors/handleExceptions';
 

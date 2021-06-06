@@ -4,6 +4,7 @@ import * as usersService from './user.service';
 
 const getAll = (req: Request, res: Response, next: NextFunction): void => {
   try {
+    // throw Error('Oops!');
     const users = usersService.getAll();
     res.json(users.map(User.toResponse));
   } catch(err) {
@@ -24,7 +25,6 @@ const createUser = (req: Request, res: Response, next: NextFunction): void => {
   try {
     const user = usersService.createUser(req.body);
     res.status(201).json(User.toResponse(user));
-    // throw new Error('Oops, not created')
   } catch(err) {
     next(err);
   }
