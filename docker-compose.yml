@@ -20,6 +20,8 @@ services:
     build: ./database/
     networks: 
       - rsschool-nodejs-rest-service
+    volumes:
+      - ./postgresdata:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
@@ -29,4 +31,5 @@ services:
     restart: always
 networks:
   rsschool-nodejs-rest-service:
+    name: my_network
     driver: bridge
