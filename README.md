@@ -1,5 +1,9 @@
 # RS School REST service
 
+## Running app with Docker
+npm run docker:start
+## Stop Docker
+npm run docker:stop
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
