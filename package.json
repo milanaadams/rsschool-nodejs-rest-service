@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "nodemon --watch src --exec ts-node src/server.ts",
     "dev": "nodemon",
     "build": "tsc",
     "lint": "eslint --ext .js,.ts --fix src/",
