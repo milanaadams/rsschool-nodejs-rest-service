@@ -3,7 +3,7 @@ export class NotFoundError extends Error {
   
   constructor(message: string, status: number) {
     super(message);
-    this.name = "ValidationError";
+    this.name = "Entity not found";
     this.status = status;
   }
 }

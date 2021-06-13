@@ -3,7 +3,8 @@ import { User } from './user.model';
 import * as usersService from './user.service';
 
 const getAll = (req: Request, res: Response, next: NextFunction): void => {
-  try{
+  try {
+    // throw Error('Oops!');
     const users = usersService.getAll();
     res.json(users.map(User.toResponse));
   } catch(err) {

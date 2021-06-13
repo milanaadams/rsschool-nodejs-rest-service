@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { NotFoundError } from './notFound';
+
 /**
  * Middleware for handling errors
  * @param {Error} err 
@@ -9,7 +10,7 @@ import { NotFoundError } from './notFound';
  */
 export function handleErrors(err: NotFoundError, req: Request, res: Response, next: NextFunction): void {
   if (!res.headersSent) {
-    res.status(err.status || 500).json({ message: err.message || 'Something went went' });
+    res.status(err.status || 500).json({ message: err.message || 'Something went wrong' });
   }
-  next();
+  next(err);
 }

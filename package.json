@@ -20,7 +20,7 @@
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
-    "doc": "./node_modules/jsdoc/jsdoc.js src -c .\\jsDocConfig.json"
+    "doc": "./node_modules/jsdoc/jsdoc.js src -c .jsDocConfig.json"
   },
   "keywords": [
     "rs",
@@ -59,6 +59,7 @@
     "swagger-ui-express": "4.1.6",
     "ts-node": "^10.0.0",
     "uuid": "8.3.2",
+    "winston": "^3.3.3",
     "yamljs": "0.3.0"
   },
   "devDependencies": {
