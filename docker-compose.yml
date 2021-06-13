@@ -1,18 +1,32 @@
 version: '3'
-service:
+services:
   node:
     build: .
+    networks: 
+      - rsschool-nodejs-rest-service
     ports:
       - ${PORT}:${PORT}
     depends_on:
-      -postgres
+      - postgres
     environment:
       - PORT=${PORT}
+    volumes:
+      - ./src/logging:/usr/src/app/src/logging
+      - ./src:/usr/src/app/src
+      - /usr/src/app/node_modules
+    command: npm start 
+    restart: always
   postgres:
     build: ./database/
+    networks: 
+      - rsschool-nodejs-rest-service
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+    restart: always
+networks:
+  rsschool-nodejs-rest-service:
+    driver: bridge
