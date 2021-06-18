@@ -3,6 +3,7 @@ import * as swaggerUI from 'swagger-ui-express';
 import * as path  from 'path';
 import * as YAML from 'yamljs';
 import { Request, Response, NextFunction } from 'express';
+import { createConnection } from 'typeorm';
 import { router as userRouter } from './resources/users/user.router';
 import { router as boardRouter } from './resources/boards/board.router';
 import { router as taskRouter } from './resources/tasks/task.router';
@@ -38,4 +39,5 @@ process.on('uncaughtException', (err) => { handleExceptions(err, 'Uncaught Excep
 process.on('unhandledRejection', (err: Error) => { handleExceptions(err, 'Unhandled Promise Rejection detected') });
 // Promise.reject(Error('Oops!'));
 
+createConnection();
 export { app };
