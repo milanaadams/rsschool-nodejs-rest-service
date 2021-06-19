@@ -10,14 +10,14 @@ const TABLE_NAME: TableName = 'Users';
 const getAll = (): User[] => DB.getAllEntities(TABLE_NAME) as User[];
 
 const getById = (id: string): User => {
-  const user: User = DB.getEntity(TABLE_NAME, id) as User;
+  const user: User = DB.getEntity(TABLE_NAME, id) as unknown as User;
   if(!user) throw new NotFoundError(`No user with id ${id}`, 404);
   return user;
 }
 
-const createUser = (user: User): User => DB.createEntity(TABLE_NAME, user) as User;
+const createUser = (user: User): User => DB.createEntity(TABLE_NAME, user) as unknown as User;
 
-const updateUser = (id: string, entity: IUser): User => DB.updateEntity(TABLE_NAME, id, entity) as User;
+const updateUser = (id: string, entity: IUser): User => DB.updateEntity(TABLE_NAME, id, entity) as unknown as User;
 
 const deleteUser = (id: string): void => { 
   const user = getById(id);

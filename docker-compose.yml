@@ -29,6 +29,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     restart: always
+    logging:
+      driver: none
   pgadmin:
     image: dpage/pgadmin4
     depends_on:
@@ -40,6 +42,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     networks: 
       - rsschool-nodejs-rest-service
+    logging:
+      driver: none
 networks:
   rsschool-nodejs-rest-service:
     name: my_network

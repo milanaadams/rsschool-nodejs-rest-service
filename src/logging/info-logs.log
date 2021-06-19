@@ -1,0 +1,112 @@
+2021-06-18 22:18:45 Method: GET | Path: /users  
+2021-06-18 22:18:45 Response status code: 200
+2021-06-18 22:18:45 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 22:30:47 Method: POST | Path: /users  
+Body: {"name":"string","login":"string","password":"string"}
+2021-06-18 22:32:48 Method: POST | Path: /users  
+Body: {"name":"string","login":"string","password":"string"}
+2021-06-18 22:56:46 Method: POST | Path: /users  
+Body: {"name":"string","login":"string","password":"string"}
+2021-06-18 23:08:03 Method: POST | Path: /users  
+Body: {"name":"string","login":"string","password":"string"}
+2021-06-18 23:08:03 Response status code: 201
+2021-06-18 23:08:26 Method: GET | Path: /users  
+2021-06-18 23:08:26 Response status code: 200
+2021-06-18 23:08:26 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 23:08:26 Response status code: 201
+2021-06-18 23:08:26 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 23:08:27 Response status code: 201
+2021-06-18 23:08:27 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 23:08:27 Response status code: 201
+2021-06-18 23:08:27 Method: PUT | Path: /users/undefined  
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 23:08:27 Response status code: 200
+2021-06-18 23:08:27 Method: GET | Path: /users/undefined  
+2021-06-18 23:08:27 Response status code: 200
+2021-06-18 23:08:27 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-18 23:08:27 Response status code: 201
+2021-06-18 23:08:27 Method: DELETE | Path: /users/undefined  
+2021-06-18 23:08:27 Response status code: 500
+2021-06-19 07:31:02 Method: POST | Path: /users  
+Body: {"name":"string","login":"string","password":"string"}
+2021-06-19 07:31:02 Response status code: 201
+2021-06-19 07:44:12 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 07:44:12 Response status code: 201
+2021-06-19 08:03:08 Method: GET | Path: /users/36a990bf-3443-47c2-8b79-9502df9beaa8  
+2021-06-19 08:03:09 Response status code: 200
+2021-06-19 08:03:29 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 08:03:29 Response status code: 201
+2021-06-19 08:12:22 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 08:12:22 Response status code: 201
+2021-06-19 08:13:32 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 08:13:32 Response status code: 201
+2021-06-19 08:22:23 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 08:22:23 Response status code: 201
+2021-06-19 08:23:05 Method: POST | Path: /users  
+Body: {"name":"string1","login":"string1","password":"string1"}
+2021-06-19 08:23:05 Response status code: 201
+2021-06-19 08:24:33 Method: GET | Path: /users  
+2021-06-19 08:24:33 Response status code: 200
+2021-06-19 08:24:33 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-19 08:24:33 Response status code: 201
+2021-06-19 08:24:33 Method: GET | Path: /users/f66cf6f1-bdd4-4e6a-a8de-3e789b1ae2b7  
+2021-06-19 08:24:33 Response status code: 200
+2021-06-19 08:24:33 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-19 08:24:33 Response status code: 201
+2021-06-19 08:24:33 Method: DELETE | Path: /users/36c9eac3-a2ff-438a-bc15-78a2cdc1ca66  
+2021-06-19 08:24:33 Response status code: 500
+2021-06-19 08:24:33 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-19 08:24:33 Response status code: 201
+2021-06-19 08:24:33 Method: PUT | Path: /users/758c30d4-b96e-49ce-b1e8-d028d105da6a  
+Body: {"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"758c30d4-b96e-49ce-b1e8-d028d105da6a"}
+2021-06-19 08:24:33 Response status code: 200
+2021-06-19 08:24:33 Method: GET | Path: /users/758c30d4-b96e-49ce-b1e8-d028d105da6a  
+2021-06-19 08:24:33 Response status code: 200
+2021-06-19 08:24:33 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: DELETE | Path: /users/e8dbf80b-0128-4f7a-8a22-10d385b24457  
+2021-06-19 08:24:34 Response status code: 500
+2021-06-19 08:24:34 Method: POST | Path: /users  
+Body: {"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: POST | Path: /boards  
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: POST | Path: /boards/undefined/tasks  
+Body: {"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"6a557233-c217-4bda-9e6d-f158af1d56f3"}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: POST | Path: /boards/undefined/tasks  
+Body: {"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"6a557233-c217-4bda-9e6d-f158af1d56f3"}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: DELETE | Path: /users/6a557233-c217-4bda-9e6d-f158af1d56f3  
+2021-06-19 08:24:34 Response status code: 500
+2021-06-19 08:24:34 Method: POST | Path: /boards  
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: GET | Path: /boards  
+2021-06-19 08:24:34 Response status code: 200
+2021-06-19 08:24:34 Method: GET | Path: /boards  
+2021-06-19 08:24:34 Response status code: 200
+2021-06-19 08:24:34 Method: POST | Path: /boards  
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:34 Method: POST | Path: /boards  
+Body: {"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]}
+2021-06-19 08:24:34 Response status code: 201
+2021-06-19 08:24:35 Method: PUT | Path: /boards/undefined  
+Body: {"title":"Autotest updated board"}
+2021-06-19 08:24:35 Response status code: 200

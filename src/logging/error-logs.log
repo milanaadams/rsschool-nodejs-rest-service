@@ -1,3 +1,48 @@
 2021-06-18 18:31:40 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
 2021-06-18 18:33:58 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
 2021-06-18 18:35:28 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 18:40:59 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 18:46:53 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 18:47:13 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 19:24:47 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:06:50 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:08:53 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:15:40 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:22:41 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:28:04 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:33:58 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:37:51 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:42:32 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:44:09 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 20:50:52 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:08:18 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:20:29 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:22:23 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:25:30 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:28:41 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:29:38 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:34:52 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:36:58 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:39:34 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:42:09 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 21:48:42 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5433
+2021-06-18 21:54:58 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5433
+2021-06-18 21:57:34 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5433
+2021-06-18 22:06:34 Unhandled Promise Rejection detected: ⨯ Unable to compile TypeScript:
+src/db/entity/user.ts(1,50): error TS6133: 'ManyToMany' is declared but its value is never read.
+
+2021-06-18 22:18:45 Unhandled Promise Rejection detected: Connection "default" was not found.
+2021-06-18 22:30:47 Unhandled Promise Rejection detected: Connection "default" was not found.
+2021-06-18 22:32:48 Unhandled Promise Rejection detected: Connection "default" was not found.
+2021-06-18 22:38:53 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-18 22:56:46 Unhandled Promise Rejection detected: Connection "default" was not found.
+2021-06-18 23:08:27 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-18 23:08:27 Unhandled Promise Rejection detected: invalid input syntax for type uuid: "undefined"
+2021-06-19 08:24:33 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 08:24:34 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 08:24:34 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 08:24:35 Unhandled Promise Rejection detected: invalid input syntax for type uuid: "undefined"

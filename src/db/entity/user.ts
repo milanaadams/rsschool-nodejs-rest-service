@@ -1,5 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
-// import { Group } from './Group';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('Users')
 export class User {

@@ -21,9 +21,9 @@ const getById = (req: Request, res: Response, next: NextFunction): void => {
   }
 }
 
-const createUser = (req: Request, res: Response, next: NextFunction): void => {
+const createUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const user = usersService.createUser(req.body);
+    const user = await usersService.createUser(req.body);
     res.status(201).json(User.toResponse(user));
   } catch(err) {
     next(err);

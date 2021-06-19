@@ -5,17 +5,17 @@ import { Board, IBoard } from './board.model';
 
 const TABLE_NAME = 'Boards';
 
-const getAll = (): Board[] => DB.getAllEntities(TABLE_NAME) as Board[];
+const getAll = (): Board[] => DB.getAllEntities(TABLE_NAME) as unknown as Board[];
 
 const getById = (id: string): Board => {
-  const board = DB.getEntity(TABLE_NAME, id) as Board;
+  const board = DB.getEntity(TABLE_NAME, id) as unknown as Board;
   if (!board) throw new NotFoundError(`Board with id ${id} not found`, 404);
   return board;
 }
 
-const createBoard = (board: IBoard): Board => DB.createEntity(TABLE_NAME, board) as Board;
+const createBoard = (board: IBoard): Board => DB.createEntity(TABLE_NAME, board) as unknown as Board;
 
-const updateBoard = (id: string, entity: IBoard): Board => DB.updateEntity(TABLE_NAME, id, entity) as Board;
+const updateBoard = (id: string, entity: IBoard): Board => DB.updateEntity(TABLE_NAME, id, entity) as unknown as Board;
 
 const deleteBoard = (id: string): void => {
   const board = getById(id);
