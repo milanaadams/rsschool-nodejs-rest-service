@@ -46,3 +46,31 @@ Response message: tasks.forEach is not a function
 2021-06-19 08:24:34 Response status code: 500 
 Response message: tasks.forEach is not a function
 2021-06-19 08:24:35 Unhandled Promise Rejection detected: invalid input syntax for type uuid: "undefined"
+2021-06-19 10:30:19 Unhandled Promise Rejection detected: Wrong driver: "undefined" given. Supported drivers are: "cordova", "expo", "mariadb", "mongodb", "mssql", "mysql", "oracle", "postgres", "sqlite", "better-sqlite3", "sqljs", "react-native", "aurora-data-api", "aurora-data-api-pg".
+2021-06-19 10:31:14 Unhandled Promise Rejection detected: Wrong driver: "undefined" given. Supported drivers are: "cordova", "expo", "mariadb", "mongodb", "mssql", "mysql", "oracle", "postgres", "sqlite", "better-sqlite3", "sqljs", "react-native", "aurora-data-api", "aurora-data-api-pg".
+2021-06-19 10:34:01 Unhandled Promise Rejection detected: Wrong driver: "undefined" given. Supported drivers are: "cordova", "expo", "mariadb", "mongodb", "mssql", "mysql", "oracle", "postgres", "sqlite", "better-sqlite3", "sqljs", "react-native", "aurora-data-api", "aurora-data-api-pg".
+2021-06-19 10:38:45 Uncaught Exception detected: ⨯ Unable to compile TypeScript:
+src/db/dbconnect.ts(2,10): error TS2459: Module '"../common/ormconfig"' declares 'config' locally, but it is not exported.
+src/db/dbconnect.ts(2,10): error TS2459: Module '"../common/ormconfig"' declares 'config' locally, but it is not exported.
+
+2021-06-19 10:40:04 Uncaught Exception detected: ⨯ Unable to compile TypeScript:
+src/db/dbconnect.ts(2,10): error TS2459: Module '"../common/ormconfig"' declares 'config' locally, but it is not exported.
+src/db/dbconnect.ts(2,10): error TS2459: Module '"../common/ormconfig"' declares 'config' locally, but it is not exported.
+
+2021-06-19 10:45:11 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-19 10:45:53 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-19 10:51:16 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 10:51:50 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-19 10:53:35 Unhandled Promise Rejection detected: connect ECONNREFUSED 127.0.0.1:5432
+2021-06-19 11:00:58 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:01:22 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:01:46 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:04:53 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:05:53 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:10:30 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:11:25 Unhandled Promise Rejection detected: No connection options were found in any orm configuration files.
+2021-06-19 11:12:17 Uncaught Exception detected: ⨯ Unable to compile TypeScript:
+src/common/ormconfig.ts(32,7): error TS6133: 'migrationConnectionConfig' is declared but its value is never read.
+
+2021-06-19 11:13:02 Unhandled Promise Rejection detected: no pg_hba.conf entry for host "192.168.32.1", user "postgres", database "postgresDB", SSL off
+2021-06-19 11:13:49 Unhandled Promise Rejection detected: no pg_hba.conf entry for host "192.168.32.1", user "postgres", database "postgresDB", SSL off

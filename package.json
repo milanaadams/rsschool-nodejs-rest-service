@@ -23,8 +23,8 @@
     "doc": "./node_modules/jsdoc/jsdoc.js src -c .jsDocConfig.json",
     "docker:start": "docker compose up",
     "docker:stop": "docker compose down",
-    "migration:generate": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:generate -n migration",
-    "migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:run"
+    "migration:generate": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormMigrationConfig.ts migration:generate -n migration",
+    "migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormMigrationConfig.ts migration:run"
   },
   "keywords": [
     "rs",
