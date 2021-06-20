@@ -737,3 +737,72 @@ Response message: Not found
 Response message: Not found
 2021-06-20 15:34:59 Response status code: 404 
 Response message: Not found
+2021-06-20 18:59:43 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:44 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:44 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:44 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:44 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:44 Response status code: 404 
+Response message: Not found
+2021-06-20 18:59:48 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:01 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:02 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:02 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:02 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:02 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:02 Response status code: 404 
+Response message: Not found
+2021-06-20 19:14:05 Response status code: 404 
+Response message: Not found
+2021-06-20 19:19:10 Response status code: 500 
+Response message: No entity column "boardId" was found.
+2021-06-20 19:19:10 Response status code: 500 
+Response message: No entity column "boardId" was found.
+2021-06-20 19:19:10 Response status code: 500 
+Response message: No entity column "boardId" was found.
+2021-06-20 19:19:10 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 19:19:10 Response status code: 500 
+Response message: No entity column "boardId" was found.
+2021-06-20 19:19:10 Response status code: 500 
+Response message: No entity column "boardId" was found.
+2021-06-20 19:19:10 Unhandled Promise Rejection detected: invalid input syntax for type uuid: "undefined"
+2021-06-20 19:21:39 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:40 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:40 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:40 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:40 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:40 Response status code: 404 
+Response message: Not found
+2021-06-20 19:21:43 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:12 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:13 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:13 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:13 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:13 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:13 Response status code: 404 
+Response message: Not found
+2021-06-20 19:23:16 Response status code: 404 
+Response message: Not found
