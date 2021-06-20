@@ -18,7 +18,7 @@ const createBoard = async (board: IBoard): Promise<Board> => await DB.createEnti
 const updateBoard = async (id: string, entity: IBoard): Promise<Board> => await DB.updateEntity(TABLE_NAME, id, entity) as unknown as Board;
 
 const deleteBoard = async (id: string): Promise<void> => {
-  const board = getById(id);
+  const board = await getById(id);
   if(board) {
     await DB.deleteEntity(TABLE_NAME, id);
     const tasks = await TASK.getAll(id);
