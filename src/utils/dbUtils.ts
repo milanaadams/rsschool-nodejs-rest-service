@@ -1,58 +1,58 @@
-import { db, TableName, DBEntity, IDBEntity } from './inMemoryDB';
-import { Task } from '../resources/tasks/task.model';
+import { getRepository } from 'typeorm';
+import { TableName, DBEntity, IDBEntity } from './inMemoryDB';
 import { NotFoundError } from '../errors/notFound';
+import {} from '../db/dbconnect';
 
 function getAllEntities(tableName: TableName): DBEntity[] {
-  const allEntities: DBEntity[] = db[tableName].filter((item: DBEntity) => item);
+  const allEntities: DBEntity[] = getRepository(tableName).find() as unknown as DBEntity[];
   return allEntities;
 }
 
-function getEntity(tableName: TableName, id: string): DBEntity {
-  const entity: DBEntity[] = db[tableName].filter((entry: DBEntity) => entry.id === id);
-  if (!entity.length) throw new NotFoundError('Not found', 404);
-  return entity[0];
+async function getEntity(tableName: TableName, entityId: string): Promise<DBEntity> {
+  const requestedEntity: DBEntity = await getRepository(tableName).findOne({ id: entityId }) as DBEntity;
+  if (!requestedEntity) throw new NotFoundError('Not found', 404);
+  return requestedEntity;
 }
 
-function createEntity(tableName: TableName, entity: DBEntity): DBEntity {
-  db[tableName].push(entity);
+async function createEntity(tableName: TableName, entity: DBEntity): Promise<DBEntity> {
+  await getRepository(tableName).save(entity);
   return getEntity(tableName, entity.id);
 }
 
-function updateEntity(tableName: TableName, id: string, entity: IDBEntity): DBEntity {
-  const entityToUpdate = getEntity(tableName, id);
+async function updateEntity(tableName: TableName, id: string, entity: IDBEntity): Promise<DBEntity> {
+  const entityToUpdate = await getEntity(tableName, id);
   if(entityToUpdate) {
-    const entityIndex = db[tableName].indexOf(entityToUpdate);
-    Object.assign(db[tableName][entityIndex], entity)
+    await getRepository(tableName).update(entityToUpdate, entity);
   }
   return getEntity(tableName, id);
 }
 
-function deleteEntity(tableName: TableName, id: string): DBEntity {
-  const table = db[tableName];
-  const entity = getEntity(tableName, id);
+async function deleteEntity(tableName: TableName, id: string): Promise<DBEntity> {
+  const entity = await getEntity(tableName, id);
   if(entity) {
-    const entityIndex = table.indexOf(entity);
-    table[entityIndex] = null;
-    db[tableName] = table.filter((entry: DBEntity) => entry);
+    await getRepository(tableName).remove(entity);
   }
   return entity;
 }
 
-function getAllEntitiesByBoardId(tableName: TableName, boardId: string): DBEntity[] {
-  const table = db[tableName];
-  const entities = table.filter((entry: Task) => entry.boardId === boardId);
+async function getAllEntitiesByBoardId(tableName: TableName, entityBoardId: string): Promise<DBEntity[]> {
+  const entities = await getRepository(tableName).find({ boardId: entityBoardId }) as unknown as DBEntity[];
+  if(!entities) {
+    throw new NotFoundError('Not found', 404);
+  }
   return entities;
 }
 
-function getEntityByBoardId(tableName: TableName, boardId: string, id: string): DBEntity {
-  const entities = getAllEntitiesByBoardId(tableName, boardId);
-  const entity = entities.filter(entry => entry.id === id)[0];
+async function getEntityByBoardId(tableName: TableName, entityBoardId: string, entityId: string): Promise<DBEntity> {
+  const entity = await getRepository(tableName).findOne({ id: entityId, boardId: entityBoardId }) as DBEntity;
+  if(!entity) {
+    throw new NotFoundError('Not found', 404);
+  }
   return entity;
 }
 
-function getAllEntitiesByUserId(tableName: TableName, userId: string): DBEntity[] {
-  const table = db[tableName];
-  const entities: DBEntity[] = table.filter((entry: Task) => entry.userId === userId);
+async function getAllEntitiesByUserId(tableName: TableName, id: string): Promise<DBEntity[]> {
+  const entities = await getRepository(tableName).find({ userId: id }) as unknown as DBEntity[];
   return entities;
 }
 

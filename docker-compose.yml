@@ -1,0 +1,50 @@
+version: '3'
+services:
+  node:
+    build: .
+    networks: 
+      - rsschool-nodejs-rest-service
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - postgres
+    environment:
+      - PORT=${PORT}
+    volumes:
+      - ./src/logging:/usr/src/app/src/logging
+      - ./src:/usr/src/app/src
+      - /usr/src/app/node_modules
+    command: npm start 
+    restart: always
+  postgres:
+    build: ./database/
+    networks: 
+      - rsschool-nodejs-rest-service
+    volumes:
+      - ./postgresdata:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    restart: always
+    logging:
+      driver: none
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports: 
+      - ${PGADMIN_PORT}:${DEFAULT_PORT}
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    networks: 
+      - rsschool-nodejs-rest-service
+    logging:
+      driver: none
+networks:
+  rsschool-nodejs-rest-service:
+    name: my_network
+    driver: bridge
