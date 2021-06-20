@@ -1,6 +1,5 @@
 import { getRepository } from 'typeorm';
-import { db, TableName, DBEntity, IDBEntity } from './inMemoryDB';
-import { Task } from '../resources/tasks/task.model';
+import { TableName, DBEntity, IDBEntity } from './inMemoryDB';
 import { NotFoundError } from '../errors/notFound';
 import {} from '../db/dbconnect';
 
@@ -36,21 +35,18 @@ async function deleteEntity(tableName: TableName, id: string): Promise<DBEntity>
   return entity;
 }
 
-async function getAllEntitiesByBoardId(tableName: TableName, boardId: string): Promise<DBEntity[]> {
-  const table = db[tableName];
-  const entities = table.filter((entry: Task) => entry.boardId === boardId);
+async function getAllEntitiesByBoardId(tableName: TableName, entityBoardId: string): Promise<DBEntity[]> {
+  const entities = await getRepository(tableName).find({ boardId: entityBoardId }) as unknown as DBEntity[];
   return entities;
 }
 
 async function getEntityByBoardId(tableName: TableName, boardId: string, entityId: string): Promise<DBEntity> {
-  // const entities = getAllEntitiesByBoardId(tableName, boardId);
   const entity = await getRepository(tableName).findOne({ id: entityId }) as DBEntity;
   return entity;
 }
 
 async function getAllEntitiesByUserId(tableName: TableName, id: string): Promise<DBEntity[]> {
   const entities = await getRepository(tableName).find({ userId: id }) as unknown as DBEntity[];
-  // const entities: DBEntity[] = table.filter((entry: Task) => entry.userId === userId);
   return entities;
 }
 

@@ -13,6 +13,6 @@ export class BoardColumnEntity {
   order: number;
 
   @ManyToOne(() => BoardEntity, board => board.columns, { primary: true })
-  @JoinColumn({ name: 'column_id' })
+  @JoinColumn({ name: 'board_id' })
   board: BoardEntity;
 }

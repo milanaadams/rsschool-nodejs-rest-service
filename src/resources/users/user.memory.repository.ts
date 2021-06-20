@@ -25,9 +25,9 @@ const deleteUser = async (id: string): Promise<void> => {
     DB.deleteEntity(TABLE_NAME, (await user).id);
     const tasks = await TASK.getAllByUser((await user).id);
     if(tasks) {
-      tasks.forEach((task) => {
+      tasks.forEach(async (task) => {
         const updatedTask = Object.assign(task, {userId: null});
-        DB.updateEntity('Tasks', task.id, updatedTask);
+        await DB.updateEntity('Tasks', task.id, updatedTask);
       })
     }
   }
