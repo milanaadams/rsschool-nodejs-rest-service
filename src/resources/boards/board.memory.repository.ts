@@ -1,5 +1,5 @@
 import * as DB from '../../utils/dbUtils';
-// import * as TASK from '../tasks/task.memory.repository';
+import * as TASK from '../tasks/task.memory.repository';
 import { NotFoundError } from '../../errors/notFound';
 import { Board, IBoard } from './board.model';
 
@@ -21,10 +21,13 @@ const deleteBoard = async (id: string): Promise<void> => {
   const board = getById(id);
   if(board) {
     await DB.deleteEntity(TABLE_NAME, id);
-    /* const tasks = TASK.getAll(id);
+    const tasks = await TASK.getAll(id);
     if(tasks) {
-      tasks.forEach((task) => TASK.deleteTask(task.id));
-    } */
+      tasks.forEach(async (task) => {
+        const updatedTask = Object.assign(task, {boardId: null});
+        await DB.updateEntity('Tasks', task.id, updatedTask);
+      });
+    }
   }
 }
 

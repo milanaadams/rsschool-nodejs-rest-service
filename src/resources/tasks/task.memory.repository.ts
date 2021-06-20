@@ -9,8 +9,8 @@ const getAll = (id: string): Task[] => DB.getAllEntitiesByBoardId(TABLE_NAME, id
 
 const getAllByUser = (id: string): Task[] => DB.getAllEntitiesByUserId(TABLE_NAME, id) as unknown as Task[];
 
-const getById = (boardId: string, id: string): Task => {
-  const task = DB.getEntityByBoardId(TABLE_NAME, boardId, id) as unknown as Task;
+const getById = async (boardId: string, id: string): Promise<Task> => {
+  const task = await DB.getEntityByBoardId(TABLE_NAME, boardId, id) as unknown as Task;
   if (!task) throw new NotFoundError(`No task with id ${id}`, 404);
   return task;
 }

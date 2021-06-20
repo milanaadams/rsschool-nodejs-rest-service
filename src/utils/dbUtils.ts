@@ -37,11 +37,17 @@ async function deleteEntity(tableName: TableName, id: string): Promise<DBEntity>
 
 async function getAllEntitiesByBoardId(tableName: TableName, entityBoardId: string): Promise<DBEntity[]> {
   const entities = await getRepository(tableName).find({ boardId: entityBoardId }) as unknown as DBEntity[];
+  if(!entities) {
+    throw new NotFoundError('Not found', 404);
+  }
   return entities;
 }
 
-async function getEntityByBoardId(tableName: TableName, boardId: string, entityId: string): Promise<DBEntity> {
-  const entity = await getRepository(tableName).findOne({ id: entityId }) as DBEntity;
+async function getEntityByBoardId(tableName: TableName, entityBoardId: string, entityId: string): Promise<DBEntity> {
+  const entity = await getRepository(tableName).findOne({ id: entityId, boardId: entityBoardId }) as DBEntity;
+  if(!entity) {
+    throw new NotFoundError('Not found', 404);
+  }
   return entity;
 }
 

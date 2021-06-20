@@ -9,9 +9,6 @@ export class BoardEntity {
   @Column()
   title: string;
 
-  @Column()
-  columns: string;
-
-  @OneToMany(() => BoardColumnEntity, column => column.board, { primary: true })
-    column: BoardColumnEntity[];
+  @OneToMany(() => BoardColumnEntity, column => column.board,)
+    columns: BoardColumnEntity[];
 }

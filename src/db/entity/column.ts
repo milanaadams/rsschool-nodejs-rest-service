@@ -12,7 +12,7 @@ export class BoardColumnEntity {
   @Column()
   order: number;
 
-  @ManyToOne(() => BoardEntity, board => board.columns, { primary: true })
-  @JoinColumn({ name: 'board_id' })
+  @ManyToOne(() => BoardEntity, board => board.columns, { cascade: true })
+  @JoinColumn({ name: 'board_column' })
   board: BoardEntity;
 }

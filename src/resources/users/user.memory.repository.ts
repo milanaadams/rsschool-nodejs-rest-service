@@ -20,9 +20,9 @@ const createUser = async (user: User): Promise<User> => await DB.createEntity(TA
 const updateUser = async (id: string, entity: IUser): Promise<User> => await DB.updateEntity(TABLE_NAME, id, entity) as unknown as User;
 
 const deleteUser = async (id: string): Promise<void> => { 
-  const user = getById(id);
+  const user = await getById(id);
   if(user) {
-    DB.deleteEntity(TABLE_NAME, (await user).id);
+    await DB.deleteEntity(TABLE_NAME, (await user).id);
     const tasks = await TASK.getAllByUser((await user).id);
     if(tasks) {
       tasks.forEach(async (task) => {
