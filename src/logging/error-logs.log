@@ -74,3 +74,324 @@ src/common/ormconfig.ts(32,7): error TS6133: 'migrationConnectionConfig' is decl
 
 2021-06-19 11:13:02 Unhandled Promise Rejection detected: no pg_hba.conf entry for host "192.168.32.1", user "postgres", database "postgresDB", SSL off
 2021-06-19 11:13:49 Unhandled Promise Rejection detected: no pg_hba.conf entry for host "192.168.32.1", user "postgres", database "postgresDB", SSL off
+2021-06-19 11:31:58 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 11:31:58 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 11:31:58 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 11:31:58 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 11:31:59 Unhandled Promise Rejection detected: invalid input syntax for type uuid: "undefined"
+2021-06-19 13:00:46 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:00:46 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:00:46 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:00:46 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:00:47 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:00:48 Unhandled Promise Rejection detected: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:34:15 Response status code: 400 
+Response message: Unexpected token J in JSON at position 31
+2021-06-19 13:36:16 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:18 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:26 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:27 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:38 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:47 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:50 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:55 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:36:55 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:36:58 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 13:36:59 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:00 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:00 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:05 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:07 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:09 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 13:37:10 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-19 13:37:11 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-19 13:37:13 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 14:08:57 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 14:24:00 Response status code: 404 
+Response message: Not found
+2021-06-19 14:25:10 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 14:25:10 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 14:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 14:25:11 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-19 14:25:11 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-19 14:25:11 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 19:54:26 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-19 19:56:06 Unhandled Promise Rejection detected: Not found
+2021-06-19 19:57:12 Unhandled Promise Rejection detected: Not found
+2021-06-19 19:59:53 Response status code: 404 
+Response message: Not found
+2021-06-19 19:59:53 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:53 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:53 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:53 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:53 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:54 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:54 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:54 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-19 19:59:54 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-19 19:59:54 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 09:25:09 Response status code: 404 
+Response message: Not found
+2021-06-20 09:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:10 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:11 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:25:12 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 09:25:12 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 09:28:44 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 09:28:45 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 09:28:45 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 09:28:45 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 09:28:46 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 09:28:47 Response status code: 404 
+Response message: Not found
+2021-06-20 09:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:28:48 Unhandled Promise Rejection detected: Not found
+2021-06-20 09:32:17 Response status code: 404 
+Response message: Not found
+2021-06-20 09:32:17 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:17 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:17 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:17 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:17 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:18 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:18 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:18 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 09:32:18 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 09:32:18 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 09:41:33 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 10:12:02 Response status code: 500 
+Response message: tasks.forEach is not a function
+2021-06-20 10:13:26 Response status code: 404 
+Response message: Not found
+2021-06-20 10:14:19 Response status code: 404 
+Response message: Not found
+2021-06-20 10:14:19 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:19 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:20 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:20 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:20 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:20 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:21 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:21 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:14:21 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:14:21 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:17:25 Response status code: 404 
+Response message: Not found
+2021-06-20 10:17:26 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:26 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:26 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:26 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:26 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:27 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:27 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:27 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:17:27 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:17:27 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:26:23 Unhandled Promise Rejection detected: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:45 Response status code: 404 
+Response message: Not found
+2021-06-20 10:28:46 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:46 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:46 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:46 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:46 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:47 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:28:47 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:28:47 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:40:34 Response status code: 404 
+Response message: Not found
+2021-06-20 10:40:35 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:35 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:35 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:35 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:35 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:37 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:37 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:37 Response status code: 500 
+Response message: null value in column "userId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:40:37 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:40:37 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:46:09 Unhandled Promise Rejection detected: Connection terminated unexpectedly
+2021-06-20 10:47:43 Response status code: 404 
+Response message: Not found
+2021-06-20 10:47:43 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:43 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:43 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:43 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:43 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:45 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:46 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:46 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:47:46 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:47:46 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:48:58 Response status code: 404 
+Response message: Not found
+2021-06-20 10:48:58 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:58 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:58 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:58 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:58 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:59 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:59 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:59 Response status code: 500 
+Response message: null value in column "columnId" of relation "Tasks" violates not-null constraint
+2021-06-20 10:48:59 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"
+2021-06-20 10:48:59 Response status code: 500 
+Response message: invalid input syntax for type uuid: "undefined"

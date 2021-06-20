@@ -15,10 +15,10 @@ const getById = (boardId: string, id: string): Task => {
   return task;
 }
 
-const createTask = (task: Task): Task => DB.createEntity(TABLE_NAME, task) as unknown as Task;
+const createTask = async (task: Task): Promise<Task> => await DB.createEntity(TABLE_NAME, task) as unknown as Task;
 
-const updateTask = (id: string, entity: ITask): Task => DB.updateEntity(TABLE_NAME, id, entity) as unknown as Task;
+const updateTask = async (id: string, entity: ITask): Promise<Task> => await DB.updateEntity(TABLE_NAME, id, entity) as unknown as Task;
 
-const deleteTask = (id: string): Task => DB.deleteEntity(TABLE_NAME, id) as unknown as Task;
+const deleteTask = async (id: string): Promise<Task> => await DB.deleteEntity(TABLE_NAME, id) as unknown as Task;
 
 export { getAll, getById, createTask, updateTask, deleteTask, getAllByUser };

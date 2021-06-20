@@ -7,30 +7,31 @@ import { TableName } from '../../utils/inMemoryDB';
 
 const TABLE_NAME: TableName = 'Users';
 
-const getAll = (): User[] => DB.getAllEntities(TABLE_NAME) as User[];
+const getAll = async (): Promise<User[]> => await DB.getAllEntities(TABLE_NAME) as User[];
 
-const getById = (id: string): User => {
-  const user: User = DB.getEntity(TABLE_NAME, id) as unknown as User;
+const getById = async (id: string): Promise<User> => {
+  const user: User = await DB.getEntity(TABLE_NAME, id) as unknown as User;
   if(!user) throw new NotFoundError(`No user with id ${id}`, 404);
   return user;
 }
 
-const createUser = (user: User): User => DB.createEntity(TABLE_NAME, user) as unknown as User;
+const createUser = async (user: User): Promise<User> => await DB.createEntity(TABLE_NAME, user) as unknown as User;
 
-const updateUser = (id: string, entity: IUser): User => DB.updateEntity(TABLE_NAME, id, entity) as unknown as User;
+const updateUser = async (id: string, entity: IUser): Promise<User> => await DB.updateEntity(TABLE_NAME, id, entity) as unknown as User;
 
-const deleteUser = (id: string): void => { 
+const deleteUser = async (id: string): Promise<void> => { 
   const user = getById(id);
   if(user) {
-    DB.deleteEntity(TABLE_NAME, id);
-    const tasks = TASK.getAllByUser(id);
+    DB.deleteEntity(TABLE_NAME, (await user).id);
+    const tasks = await TASK.getAllByUser((await user).id);
     if(tasks) {
       tasks.forEach((task) => {
-        const updatedTask = task; 
-        updatedTask.userId = null;
+        const updatedTask = Object.assign(task, {userId: null});
+        DB.updateEntity('Tasks', task.id, updatedTask);
       })
     }
   }
 }
 
 export { getAll, getById, createUser, updateUser, deleteUser };
+

@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { BoardColumn } from './column';
+import { BoardColumnEntity } from './column';
 
 @Entity('Boards')
-export class Board {
+export class BoardEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -12,6 +12,6 @@ export class Board {
   @Column()
   columns: string;
 
-  @OneToMany(() => BoardColumn, column => column.board, { primary: true })
-    column: BoardColumn[];
+  @OneToMany(() => BoardColumnEntity, column => column.board, { primary: true })
+    column: BoardColumnEntity[];
 }

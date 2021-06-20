@@ -2,10 +2,10 @@ import { getRepository } from 'typeorm';
 import { db, TableName, DBEntity, IDBEntity } from './inMemoryDB';
 import { Task } from '../resources/tasks/task.model';
 import { NotFoundError } from '../errors/notFound';
-import {} from '../db/dbconnect'
+import {} from '../db/dbconnect';
 
 function getAllEntities(tableName: TableName): DBEntity[] {
-  const allEntities: DBEntity[] = db[tableName].filter((item: DBEntity) => item);
+  const allEntities: DBEntity[] = getRepository(tableName).find() as unknown as DBEntity[];
   return allEntities;
 }
 
@@ -21,10 +21,9 @@ async function createEntity(tableName: TableName, entity: DBEntity): Promise<DBE
 }
 
 async function updateEntity(tableName: TableName, id: string, entity: IDBEntity): Promise<DBEntity> {
-  const entityToUpdate = getEntity(tableName, id);
+  const entityToUpdate = await getEntity(tableName, id);
   if(entityToUpdate) {
-    const updatedEntity = Object.assign(entityToUpdate, entity);
-    getRepository(tableName).save(updatedEntity);
+    await getRepository(tableName).update(entityToUpdate, entity);
   }
   return getEntity(tableName, id);
 }
@@ -49,9 +48,9 @@ async function getEntityByBoardId(tableName: TableName, boardId: string, entityI
   return entity;
 }
 
-async function getAllEntitiesByUserId(tableName: TableName, userId: string): Promise<DBEntity[]> {
-  const table = db[tableName];
-  const entities: DBEntity[] = table.filter((entry: Task) => entry.userId === userId);
+async function getAllEntitiesByUserId(tableName: TableName, id: string): Promise<DBEntity[]> {
+  const entities = await getRepository(tableName).find({ userId: id }) as unknown as DBEntity[];
+  // const entities: DBEntity[] = table.filter((entry: Task) => entry.userId === userId);
   return entities;
 }
 

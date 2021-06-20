@@ -1,8 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { Board } from './board';
+import { BoardEntity } from './board';
 
 @Entity('Columns')
-export class BoardColumn {
+export class BoardColumnEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -12,7 +12,7 @@ export class BoardColumn {
   @Column()
   order: number;
 
-  @ManyToOne(() => Board, board => board.columns, { primary: true })
+  @ManyToOne(() => BoardEntity, board => board.columns, { primary: true })
   @JoinColumn({ name: 'column_id' })
-  board: Board;
+  board: BoardEntity;
 }
