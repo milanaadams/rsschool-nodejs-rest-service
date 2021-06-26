@@ -9,7 +9,7 @@ export interface IColumn {
 }
 
 @Entity('Columns')
-export class BoardColumn implements IColumn {
+export class Columns implements IColumn {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
