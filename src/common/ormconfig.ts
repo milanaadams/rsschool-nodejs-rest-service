@@ -18,7 +18,7 @@ export const config = {
   synchronize: false,
   logging: false,
   entities: [
-     'src/db/entity/*{.ts,.js}'
+     'src/resources/**/*.model{.ts,.js}'
   ],
   migrations: [
      'src/db/migration/**/*.ts'

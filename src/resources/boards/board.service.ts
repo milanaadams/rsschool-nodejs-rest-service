@@ -5,7 +5,7 @@ const getAll = async (): Promise<Board[]> => boardRepo.getAll();
 
 const getById = async (id: string): Promise<Board> => boardRepo.getById(id);
 
-const createBoard = async (board: IBoard): Promise<Board> => boardRepo.createBoard(new Board(board));
+const createBoard = async (board: Board): Promise<Board> => boardRepo.createBoard(board);
 
 const updateBoard = async ( id: string, entity: IBoard ): Promise<Board> => boardRepo.updateBoard(id, entity);
 

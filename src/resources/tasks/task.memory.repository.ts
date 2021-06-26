@@ -1,24 +1,50 @@
-import * as DB from '../../utils/dbUtils';
+import { getRepository } from 'typeorm';
 import { NotFoundError } from '../../errors/notFound';
-import { TableName } from '../../utils/inMemoryDB';
 import { Task, ITask } from './task.model';
 
-const TABLE_NAME: TableName = 'Tasks';
+const getAll = async (id: string): Promise<Task[]> => {
+  const tasks = await getRepository(Task).find({ boardId: id });
+  if(!tasks) {
+    throw new NotFoundError('Not found', 404);
+  }
+  return tasks;
+}
 
-const getAll = (id: string): Task[] => DB.getAllEntitiesByBoardId(TABLE_NAME, id) as unknown as Task[];
-
-const getAllByUser = (id: string): Task[] => DB.getAllEntitiesByUserId(TABLE_NAME, id) as unknown as Task[];
-
-const getById = async (boardId: string, id: string): Promise<Task> => {
-  const task = await DB.getEntityByBoardId(TABLE_NAME, boardId, id) as unknown as Task;
-  if (!task) throw new NotFoundError(`No task with id ${id}`, 404);
+const getById = async(id: string): Promise<Task> => { 
+  const task = await getRepository(Task).findOne({ id }); 
+  if(!task) {
+    throw new NotFoundError(`No task with id ${id}`, 404);
+  }
   return task;
 }
 
-const createTask = async (task: Task): Promise<Task> => await DB.createEntity(TABLE_NAME, task) as unknown as Task;
+const getAllByUser = async (id: string): Promise<Task[]> => getRepository(Task).find({ userId: id });
 
-const updateTask = async (id: string, entity: ITask): Promise<Task> => await DB.updateEntity(TABLE_NAME, id, entity) as unknown as Task;
+const getByBoardId = async (boardId: string, id: string): Promise<Task> => {
+  const task = await getRepository(Task).findOne({ id, boardId });
+  if(!task) {
+    throw new NotFoundError(`No task with id ${id}`, 404);
+  }
+  return task;
+}
 
-const deleteTask = async (id: string): Promise<Task> => await DB.deleteEntity(TABLE_NAME, id) as unknown as Task;
+const createTask = async (task: Task): Promise<Task> => {
+  await getRepository(Task).save(task);
+  return getById(task.id);
+}
 
-export { getAll, getById, createTask, updateTask, deleteTask, getAllByUser };
+const updateTask = async (id: string, task: ITask): Promise<Task> => {
+  const taskToUpdate = await getById(id);
+  if(taskToUpdate) {
+    await getRepository(Task).update(taskToUpdate, task);
+  }
+  return getById(task.id);
+}
+
+const deleteTask = async (id: string): Promise<Task> => {
+  const task = await getById(id);
+  await getRepository(Task).remove(task);
+  return task;
+}
+
+export { getAll, getByBoardId, createTask, updateTask, deleteTask, getAllByUser };

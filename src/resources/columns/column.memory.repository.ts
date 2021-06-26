@@ -1,12 +1,23 @@
-import * as DB from '../../utils/dbUtils';
-import { Column, IColumn } from './column.model';
+import { getRepository } from 'typeorm';
+import { BoardColumn } from './column.model';
 
-const TABLE_NAME = 'Columns';
+const getById = async (id: string): Promise<BoardColumn> => getRepository(BoardColumn).findOne({ id });
 
-const createColumn = async (columns: IColumn[]): Promise<void> => {
+const getAllBoardColumns = async (boardId: string): Promise<BoardColumn[]> => getRepository(BoardColumn).find({ boardId });
+
+const createColumn = async (columns: BoardColumn[], boardId: string): Promise<void> => {
   columns.forEach(async (col) => {
-    await DB.createEntity(TABLE_NAME, new Column(col)) as unknown as Column;
-  })
-};
+    // eslint-disable-next-line no-param-reassign
+    col.boardId = boardId;
+    getRepository(BoardColumn).save(col);
+  });
+}
 
-export { createColumn };
+const updateColumn = async (columnId: string, updatedColumnInfo: BoardColumn): Promise<void> => {
+  const columnToUpdate = await getById(columnId);
+  if(columnToUpdate) {
+    await getRepository(BoardColumn).update(columnToUpdate, updatedColumnInfo);
+  }
+}
+
+export { createColumn, getAllBoardColumns, updateColumn };

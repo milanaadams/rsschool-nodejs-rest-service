@@ -1,4 +1,5 @@
-import * as uuid from 'uuid';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { Board } from '../boards/board.model';
 
 export interface IColumn {
   id: string;
@@ -7,20 +8,20 @@ export interface IColumn {
 
 }
 
-export class Column implements IColumn {
+@Entity('Columns')
+export class BoardColumn implements IColumn {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({ nullable: true })
   title: string;
 
+  @Column({ nullable: true })
   order: number;
-  
-  constructor({
-    id = uuid.v4(),
-    title = 'BOARD',
-    order = 0,
-  } = {}) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-  }
+
+  @ManyToOne(() => Board, board => board.columns, { cascade: true } )
+  board: Board;
+
+  @Column({ nullable: true })
+  boardId!: string;
 }

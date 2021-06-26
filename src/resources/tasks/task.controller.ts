@@ -12,7 +12,7 @@ const getAll = async (req: Request, res: Response, next: NextFunction): Promise<
 
 const getById = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const task = await taskService.getById(req.params.boardId, req.params.id);
+    const task = await taskService.getByBoardId(req.params.boardId, req.params.id);
     res.json(task);
   } catch(err) {
     next(err);

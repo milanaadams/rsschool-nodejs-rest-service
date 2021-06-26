@@ -1,20 +1,21 @@
-import * as uuid from 'uuid';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { BoardColumn } from '../columns/column.model';
 
 export interface IBoard {
   id: string;
   title: string;
+  columns?: BoardColumn[];
 }
 
+@Entity('Boards')
 export class Board implements IBoard {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   title: string;
-  
-  constructor({
-    id = uuid.v4(),
-    title = 'BOARD',
-  } = {}) {
-    this.id = id;
-    this.title = title;
-  }
+
+  @OneToMany(() => BoardColumn, column => column.board )
+  columns: BoardColumn[];
+
 }
