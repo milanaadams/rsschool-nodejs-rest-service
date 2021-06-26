@@ -3,13 +3,12 @@ import { BoardColumn } from './column.model';
 
 const getById = async (id: string): Promise<BoardColumn> => getRepository(BoardColumn).findOne({ id });
 
-const getAllBoardColumns = async (boardId: string): Promise<BoardColumn[]> => getRepository(BoardColumn).find({ boardId });
+// const getAllBoardColumns = async (boardId: string): Promise<BoardColumn[]> => getRepository(BoardColumn).find({ boardId });
 
-const createColumn = async (columns: BoardColumn[], boardId: string): Promise<void> => {
-  columns.forEach(async (col) => {
-    // eslint-disable-next-line no-param-reassign
-    col.boardId = boardId;
-    getRepository(BoardColumn).save(col);
+const createColumn = async (columns: BoardColumn[]): Promise<void> => {
+  columns.forEach(async(col): Promise<BoardColumn> => {
+    const newCol = await getRepository(BoardColumn).save(col);
+    return newCol;
   });
 }
 
@@ -20,4 +19,4 @@ const updateColumn = async (columnId: string, updatedColumnInfo: BoardColumn): P
   }
 }
 
-export { createColumn, getAllBoardColumns, updateColumn };
+export { createColumn, updateColumn };

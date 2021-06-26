@@ -14,19 +14,18 @@ const getById = async(id: string): Promise<Board> => {
 
 const createBoard = async (board: Board): Promise<Board> => {
   const newBoard = await getRepository(Board).save(board);
-  if(board.columns.length) {
-    await COLUMNS.createColumn(board.columns, newBoard.id);
-  }
-  return getById(newBoard.id);
+  COLUMNS.createColumn(board.columns);
+  const getNewBoard = await getById(newBoard.id);
+  return getNewBoard;
 }
 
 const updateBoard = async (id: string, updatedBoardInfo: IBoard): Promise<Board> => {
   const boardToUpdate = await getById(id);
   if(boardToUpdate) {
-    const { id, title } = updatedBoardInfo;
-    await getRepository(Board).update({ id }, {id, title});
+    await getRepository(Board).update(boardToUpdate, updatedBoardInfo);
   }
-  return getById(id);
+  const updatedBoard = await getById(id);
+  return updatedBoard;
 }
 
 const deleteBoard = async (id: string): Promise<void> => {
@@ -39,15 +38,15 @@ const deleteBoard = async (id: string): Promise<void> => {
         await TASK.updateTask(task.id, updatedTask);
       });
 
-    const columns = await COLUMNS.getAllBoardColumns(id);
+    /* const columns = await COLUMNS.getAllBoardColumns(id);
     if(columns) {
       columns.forEach(async (col) => {
         const updatedColumn = Object.assign(col, { boardId: null});
         await COLUMNS.updateColumn(col.id, updatedColumn);
       })
-    }
-    }
-    await getRepository(Board).remove(board);
+    } */
+  }
+  await getRepository(Board).remove(board);
   }
 }
 

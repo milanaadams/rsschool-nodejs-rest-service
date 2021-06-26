@@ -19,9 +19,7 @@ export class BoardColumn implements IColumn {
   @Column({ nullable: true })
   order: number;
 
-  @ManyToOne(() => Board, board => board.columns, { cascade: true } )
+  @ManyToOne(() => Board, board => board.columns )
   board: Board;
-
-  @Column({ nullable: true })
-  boardId!: string;
+  
 }

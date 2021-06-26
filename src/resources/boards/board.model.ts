@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable } from 'typeorm';
 import { BoardColumn } from '../columns/column.model';
 
 export interface IBoard {
@@ -15,7 +15,8 @@ export class Board implements IBoard {
   @Column()
   title: string;
 
-  @OneToMany(() => BoardColumn, column => column.board )
+  @OneToMany(() => BoardColumn, column => column.board, { eager: true, cascade: true } )
+  @JoinTable()
   columns: BoardColumn[];
 
 }
