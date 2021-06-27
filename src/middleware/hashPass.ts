@@ -9,7 +9,7 @@ function hashPass(req: Request, res: Response, next: CallableFunction): void {
     }
     req.body.password = hash;
     next();
-});
+  });
 }
 
 export { hashPass };
