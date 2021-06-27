@@ -10,7 +10,7 @@ const authUser = async (user: User): Promise<User> => {
   if (!requestedUser) {
     throw new NotFoundError('No such user', 403);
   }
-  const pass = checkPass(user.password, requestedUser.password);
+  const pass = await checkPass(user.password, requestedUser.password);
   if(!pass) {
     throw new NotFoundError('Username and/or password do not match', 403);
   }

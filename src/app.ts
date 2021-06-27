@@ -12,6 +12,7 @@ import { handleErrors } from './errors/handleErrors';
 import { requestLogger, errorLogger } from './logging/logger';
 import { getInvalidRoute } from './middleware/handleInvalidRoute';
 import { handleExceptions } from './errors/handleExceptions';
+import { verifyToken } from './middleware/verifyToken';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
@@ -30,6 +31,7 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 
 app.use(requestLogger);
 app.use('/login', loginRouter);
+app.use(verifyToken);
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
