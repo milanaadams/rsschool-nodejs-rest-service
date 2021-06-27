@@ -1,4 +1,4 @@
-import * as uuid from 'uuid';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 export interface ITask {
   id: string;
@@ -10,38 +10,26 @@ export interface ITask {
   columnId: string;
 }
 
-class Task implements ITask {
+@Entity('Tasks')
+export class Task implements ITask {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   title: string;
 
+  @Column()
   order: number;
-
+  
+  @Column()
   description: string;
 
-  userId: string;
+  @Column({ nullable: true })
+  userId: string | null;
 
-  boardId: string;
+  @Column({ nullable: true })
+  boardId: string | null;
 
-  columnId: string;
-
-  constructor({
-    id = uuid.v4(),
-    title = 'TASK',
-    order = 0,
-    description = 'Description',
-    userId = '',
-    boardId = '',
-    columnId = ''
-  } = {}) {
-    this.id = id;
-    this.title = title;
-    this.order = order;
-    this.description = description;
-    this.userId = userId;
-    this.boardId = boardId;
-    this.columnId = columnId;
-  }
+  @Column({ nullable: true })
+  columnId: string | null;
 }
-
-export { Task };

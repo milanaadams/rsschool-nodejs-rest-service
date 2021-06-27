@@ -1,4 +1,4 @@
-import * as uuid from 'uuid';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 export interface IUser {
   id: string;
@@ -9,7 +9,7 @@ export interface IUser {
 
 type UserResponse = Pick<IUser, 'id' | 'name' | 'login'>;
 
-export class User implements IUser {
+/* export class User1 implements IUser {
   id: string;
 
   name: string;
@@ -29,12 +29,22 @@ export class User implements IUser {
     this.login = login;
     this.password = password;
   }
+} */
 
-  /**
-   * Generates object from the User instance excluding sensetive information such as password
-   * @param {User} user 
-   * @returns {object}
-   */
+@Entity('Users')
+export class User implements IUser {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
+  name: string;
+
+  @Column()
+  login: string;
+
+  @Column()
+  password: string;
+
   static toResponse(user: User): UserResponse {
     const { id, name, login } = user;
     return { id, name, login };

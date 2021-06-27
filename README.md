@@ -1,5 +1,20 @@
 # RS School REST service
 
+## Running app with Docker
+npm run docker:start
+ -----
+wait for postgress fully load and be ready to accept connections (might take couple of minutes)
+
+## Migrate tables
+npm run migration:run
+
+----
+If it fails make sure you gave enough time for postgres to load into container and be ready to accept connections
+
+## Load admin user
+npm run seed:run
+## Stop Docker
+npm run docker:stop
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).

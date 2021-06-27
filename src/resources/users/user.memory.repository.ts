@@ -1,35 +1,43 @@
-import * as DB from '../../utils/dbUtils';
+import { getRepository } from 'typeorm';
 import * as TASK from '../tasks/task.memory.repository';
 import { NotFoundError } from '../../errors/notFound';
 import { User, IUser } from './user.model';
-import { TableName } from '../../utils/inMemoryDB';
 
+const getAll = async (): Promise<User[]> => {
+  const allEntities = getRepository(User).find();
+  return allEntities;
+}
 
-const TABLE_NAME: TableName = 'Users';
-
-const getAll = (): User[] => DB.getAllEntities(TABLE_NAME) as User[];
-
-const getById = (id: string): User => {
-  const user: User = DB.getEntity(TABLE_NAME, id) as User;
+const getById = async (id: string): Promise<User> => {
+  const user = await getRepository(User).findOne({ id })
   if(!user) throw new NotFoundError(`No user with id ${id}`, 404);
   return user;
 }
 
-const createUser = (user: User): User => DB.createEntity(TABLE_NAME, user) as User;
+const createUser = async (newUser: User): Promise<User> => {
+  await getRepository(User).save(newUser);
+  return getById(newUser.id);
+}
 
-const updateUser = (id: string, entity: IUser): User => DB.updateEntity(TABLE_NAME, id, entity) as User;
+const updateUser = async (id: string, newUserInfo: IUser): Promise<User> => {
+  const userToUpdate = await getById(id);
+  if(userToUpdate) {
+    await getRepository(User).update(userToUpdate, newUserInfo);
+  }
+  return getById(userToUpdate.id);
+}
 
-const deleteUser = (id: string): void => { 
-  const user = getById(id);
+const deleteUser = async (id: string): Promise<void> => {
+  const user = await getById(id);
   if(user) {
-    DB.deleteEntity(TABLE_NAME, id);
-    const tasks = TASK.getAllByUser(id);
+    const tasks = await TASK.getAllByUser(user.id);
     if(tasks) {
-      tasks.forEach((task) => {
-        const updatedTask = task; 
-        updatedTask.userId = null;
+      tasks.forEach(async (task) => {
+        const updatedTask = Object.assign(task, {userId: null});
+        await TASK.updateTask(task.id, updatedTask);
       })
     }
+    await getRepository(User).remove(user);
   }
 }
 

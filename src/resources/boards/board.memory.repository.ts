@@ -1,30 +1,46 @@
-import * as DB from '../../utils/dbUtils';
+import { getRepository } from 'typeorm';
 import * as TASK from '../tasks/task.memory.repository';
 import { NotFoundError } from '../../errors/notFound';
 import { Board, IBoard } from './board.model';
+import * as COLUMNS from '../columns/column.memory.repository';
 
-const TABLE_NAME = 'Boards';
+const getAll = async (): Promise<Board[]> => getRepository(Board).find();
 
-const getAll = (): Board[] => DB.getAllEntities(TABLE_NAME) as Board[];
-
-const getById = (id: string): Board => {
-  const board = DB.getEntity(TABLE_NAME, id) as Board;
+const getById = async(id: string): Promise<Board> => {
+  const board = await getRepository(Board).findOne({ id });
+  
   if (!board) throw new NotFoundError(`Board with id ${id} not found`, 404);
   return board;
 }
 
-const createBoard = (board: IBoard): Board => DB.createEntity(TABLE_NAME, board) as Board;
+const createBoard = async (board: Board): Promise<Board> => {
+  const newBoard = await getRepository(Board).save(board);
+  COLUMNS.createColumn(board.columns);
+  const getNewBoard = await getById(newBoard.id);
+  return getNewBoard;
+}
 
-const updateBoard = (id: string, entity: IBoard): Board => DB.updateEntity(TABLE_NAME, id, entity) as Board;
+const updateBoard = async (id: string, updatedBoardInfo: IBoard): Promise<Board> => {
+  const boardToUpdate = await getById(id);
+  if(boardToUpdate) {
+    Object.assign(boardToUpdate, updatedBoardInfo);
+    await getRepository(Board).save(boardToUpdate);
+  }
+  const updatedBoard = await getById(id);
+  return updatedBoard;
+}
 
-const deleteBoard = (id: string): void => {
-  const board = getById(id);
+const deleteBoard = async (id: string): Promise<void> => {
+  const board = await getById(id);
   if(board) {
-    DB.deleteEntity(TABLE_NAME, id);
-    const tasks = TASK.getAll(id);
+    const tasks = await TASK.getAll(id);
     if(tasks) {
-      tasks.forEach((task) => TASK.deleteTask(task.id));
-    }
+      tasks.forEach(async (task) => {
+        const updatedTask = Object.assign(task, {boardId: null});
+        await TASK.updateTask(task.id, updatedTask);
+      });
+  }
+  await getRepository(Board).remove(board);
   }
 }
 

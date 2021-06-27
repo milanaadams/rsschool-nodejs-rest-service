@@ -1,38 +1,22 @@
-import * as uuid from 'uuid';
-
-interface IColumn {
-  id: string;
-  title: string;
-  order: number;
-
-}
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinTable } from 'typeorm';
+import { Columns } from '../columns/column.model';
 
 export interface IBoard {
   id: string;
   title: string;
-  columns: Array<IColumn>;
+  columns?: Columns[];
 }
 
+@Entity('Boards')
 export class Board implements IBoard {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column()
   title: string;
 
-  columns: Array<IColumn>;
-  
-  constructor({
-    id = uuid.v4(),
-    title = 'BOARD',
-    columns = [
-      {
-        id: uuid.v4(),
-        title: 'COLUMN',
-        order: 0
-      }
-    ],
-  } = {}) {
-    this.id = id;
-    this.title = title;
-    this.columns = columns.map((column) => ({id: uuid.v4(), ...column, }));
-  }
+  @OneToMany(() => Columns, column => column.board, { eager: true, cascade: true } )
+  @JoinTable()
+  columns: Columns[];
+
 }
