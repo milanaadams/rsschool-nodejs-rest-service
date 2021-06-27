@@ -19,7 +19,7 @@ export class Columns implements IColumn {
   @Column({ nullable: true })
   order: number;
 
-  @ManyToOne(() => Board, board => board.columns )
+  @ManyToOne(() => Board, board => board.columns, { onDelete: 'CASCADE' } )
   board: Board;
   
 }

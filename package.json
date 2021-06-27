@@ -24,7 +24,8 @@
     "docker:start": "docker compose up",
     "docker:stop": "docker compose down",
     "migration:generate": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormMigrationConfig.ts migration:generate -n migration",
-    "migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormMigrationConfig.ts migration:run"
+    "migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js --config src/common/ormMigrationConfig.ts migration:run",
+    "seed:run": "ts-node ./node_modules/typeorm-seeding/dist/cli.js --configName src/common/ormMigrationConfig.ts seed"
   },
   "keywords": [
     "rs",
@@ -68,6 +69,7 @@
     "swagger-ui-express": "4.1.6",
     "ts-node": "^10.0.0",
     "typeorm": "^0.2.34",
+    "typeorm-seeding": "^1.6.1",
     "uuid": "8.3.2",
     "winston": "^3.3.3",
     "yamljs": "0.3.0"

@@ -25,7 +25,8 @@ const migrationConnectionConfig = {
    ],
    cli: {
     "migrationsDir": 'src/db/migration'
-    }
+    },
+   "seeds": ["src/db/seeding/**/*{.ts,.js}"]
  
  } as unknown as ConnectionOptions;
 

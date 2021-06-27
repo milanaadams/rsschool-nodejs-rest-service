@@ -2,3 +2,5 @@ node_modules/
 dist/
 test/
 postgresdata/
+src/db/migration/
+src/db/seeding/
