@@ -11,6 +11,4 @@ const updateUser = async ( id: string, entity: IUser ): Promise<User> => usersRe
 
 const deleteUser = async (id: string): Promise<void> => usersRepo.deleteUser(id);
 
-const authUser = async (user: User): Promise<User> => usersRepo.authUser(user); 
-
-export { getAll, getById, createUser, updateUser, deleteUser, authUser };
+export { getAll, getById, createUser, updateUser, deleteUser };

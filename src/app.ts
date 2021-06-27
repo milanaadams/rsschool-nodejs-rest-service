@@ -4,6 +4,7 @@ import * as cors from 'cors';
 import * as path  from 'path';
 import * as YAML from 'yamljs';
 import { Request, Response, NextFunction } from 'express';
+import { router as loginRouter } from './resources/login/login.router';
 import { router as userRouter } from './resources/users/user.router';
 import { router as boardRouter } from './resources/boards/board.router';
 import { router as taskRouter } from './resources/tasks/task.router';
@@ -28,6 +29,7 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.use(requestLogger);
+app.use('/login', loginRouter);
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);

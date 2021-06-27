@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
 import { User } from './user.model';
 import * as usersService from './user.service';
 
@@ -49,19 +48,4 @@ const deleteUser = async (req: Request, res: Response, next: NextFunction): Prom
   }
 }
 
-const login = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  try {
-    const user = await usersService.authUser(req.body);
-    const payload = { id: user.id, login: user.login };
-      jwt.sign(payload, process.env.JWT_KEY, { expiresIn: 60 * 30 }, (err: Error, jwttoken: string) => {
-        if (err) {
-          return next(err);
-        }
-        return res.json({ token: jwttoken });
-      });
-  } catch(err) {
-    next(err);
-  }
-}
-
-export { getAll, getById, createUser, updateUser, deleteUser, login };
+export { getAll, getById, createUser, updateUser, deleteUser };

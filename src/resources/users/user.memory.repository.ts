@@ -1,5 +1,4 @@
 import { getRepository } from 'typeorm';
-import * as bcrypt from 'bcrypt';
 import * as TASK from '../tasks/task.memory.repository';
 import { NotFoundError } from '../../errors/notFound';
 import { User, IUser } from './user.model';
@@ -42,18 +41,4 @@ const deleteUser = async (id: string): Promise<void> => {
   }
 }
 
-const checkPass = async(password: string, hash: string): Promise<boolean> => bcrypt.compareSync(password, hash);
-
-const authUser = async (user: User): Promise<User> => {
-  const requestedUser = await getRepository(User).findOne({ login: user.login });
-  if (!requestedUser) {
-    throw new Error('Username and/or password do not match');
-  }
-  const pass = checkPass(user.password, requestedUser.password);
-  if(!pass) {
-    throw new Error('Username and/or password do not match');
-  }
-  return requestedUser;
-}
-
-export { getAll, getById, createUser, updateUser, deleteUser, authUser };
+export { getAll, getById, createUser, updateUser, deleteUser };

@@ -1,6 +1,0 @@
-2021-06-26 20:48:32 Method: POST | Path: /users  
-Body: {"name":"string","login":"string","password":"string"}
-2021-06-26 20:48:32 Response status code: 201
-2021-06-27 10:00:05 Method: POST | Path: /login  
-Body: {"login":"string","password":"string"}
-2021-06-27 10:00:05 Response status code: 400
