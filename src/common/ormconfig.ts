@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv';
 import * as path from 'path';
 
 dotenv.config({
-  path: path.join(__dirname, '../../.env')
-})
+  path: path.join(__dirname, '../../.env'),
+});
 
 export const config = {
   type: 'postgres',
@@ -17,14 +17,9 @@ export const config = {
   reconnectionInterval: 1000,
   synchronize: false,
   logging: false,
-  entities: [
-     'src/resources/**/*.model{.ts,.js}'
-  ],
-  migrations: [
-     'src/db/migration/**/*.ts'
-  ],
+  entities: ['dist/**/*.entity{.ts,.js}'],
+  migrations: ['dist/db/migration/**/*.ts'],
   cli: {
-   "migrationsDir": 'src/db/migration'
-   }
-
+    migrationsDir: 'src/db/migration',
+  },
 } as unknown as ConnectionOptions;
