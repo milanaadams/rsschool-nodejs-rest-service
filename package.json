@@ -37,12 +37,14 @@
     "dirty-chai": "^2.0.1",
     "dotenv": "^10.0.0",
     "fastify-swagger": "^4.8.2",
+    "nest-winston": "^1.5.0",
     "pg": "^8.6.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6",
     "swagger-ui-express": "^4.1.6",
     "typeorm": "^0.2.34",
+    "winston": "^3.3.3",
     "yaml": "^1.10.2"
   },
   "devDependencies": {
