@@ -4,7 +4,6 @@ import { IBoardStorage } from './interfaces/IBoardStorage.interface';
 import { Board } from './entities/board.entity';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
-import * as TASK from '../tasks/tasks.service';
 
 @Injectable()
 export class BoardStorage implements IBoardStorage {
