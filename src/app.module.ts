@@ -28,7 +28,7 @@ import { exceptionFilterWithLogger } from './exceptions/exceptionFilter';
     {
       provide: APP_FILTER,
       useClass: exceptionFilterWithLogger,
-    }
+    },
   ],
 })
 export class AppModule implements NestModule {

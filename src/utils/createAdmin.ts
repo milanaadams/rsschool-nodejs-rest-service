@@ -7,7 +7,6 @@ export async function createDefaultAdmin() {
   const adminExist = await userRepo.findOne({ login: 'admin' });
 
   if (adminExist) {
-    console.log(adminExist);
     return;
   }
 
