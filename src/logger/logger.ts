@@ -20,7 +20,6 @@ const requestLoggerFormat = printf(
 );
 
 export const logger = createLogger({
-  level: 'info',
   format: combine(
     timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
@@ -32,10 +31,14 @@ export const logger = createLogger({
       filename: './src/logger/info-logs.log',
       level: 'info',
     }),
+    new transports.File({
+      filename: './src/logger/error-logs.log',
+      level: 'error',
+    }),
   ],
 });
 
-const errLogger = createLogger({
+export const errLogger = createLogger({
   level: 'error',
   format: combine(
     timestamp({
@@ -69,16 +72,18 @@ function requestLogger(req: Request, res: Response): void {
   });
 }
 
-function errorLogger(
-  err: Error,
-  req: Request,
-  res: Response,
-  next: CallableFunction,
-): void {
+function errorLogger(err, req: Request, res: Response): void {
+  const { method } = req;
+  const { url } = req;
+  const query = Object.getOwnPropertyNames(req.query).length
+    ? `\nQuery: ${JSON.stringify(req.query)}`
+    : '';
+  const body = Object.getOwnPropertyNames(req.body).length
+    ? `\nBody: ${JSON.stringify(removePass(req.body))}`
+    : '';
   errLogger.error(
-    `Response status code: ${res.statusCode} \nResponse message: ${err.message}`,
+    `Response status code: ${err.statusCode} \nRMethod: ${method} | Path: ${url} ${query} ${body}`,
   );
-  next();
 }
 
 // Used for logging uncaughtExceptions so the process.exit(1) doesn't stop writing to log files.

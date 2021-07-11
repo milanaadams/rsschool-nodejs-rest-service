@@ -10,6 +10,8 @@ import { LoginModule } from './login/login.module';
 import { WinstonModule } from 'nest-winston';
 import { logger } from './logger/logger';
 import { LoggerMiddleware } from './logger/loggerMiddleware';
+import { APP_FILTER } from '@nestjs/core';
+import { exceptionFilterWithLogger } from './exceptions/exceptionFilter';
 
 @Module({
   imports: [
@@ -21,10 +23,16 @@ import { LoggerMiddleware } from './logger/loggerMiddleware';
     WinstonModule.forRoot(logger),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_FILTER,
+      useClass: exceptionFilterWithLogger,
+    }
+  ],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggerMiddleware).forRoutes('users', 'boards');
+    consumer.apply(LoggerMiddleware).forRoutes('users', 'boards', 'login');
   }
 }
