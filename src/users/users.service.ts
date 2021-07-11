@@ -4,6 +4,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { UserStorage } from './users.storage';
 import { TaskStorage } from '../tasks/tasks.storage';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -13,7 +14,11 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const newUser = await this.userStorage.createUser(createUserDto);
+    const userWithHashedPass = {
+      ...createUserDto,
+      password: bcrypt.hashSync(createUserDto.password, 10),
+    };
+    const newUser = await this.userStorage.createUser(userWithHashedPass);
     return User.toResponse(newUser);
   }
 

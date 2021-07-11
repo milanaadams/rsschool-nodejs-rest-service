@@ -1,4 +1,5 @@
 import {
+  UseGuards,
   Controller,
   Get,
   Post,
@@ -10,8 +11,10 @@ import {
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
+import { AuthGuard } from '../login/auth.guard';
 
 @Controller('boards')
+@UseGuards(AuthGuard)
 export class BoardsController {
   constructor(private readonly boardsService: BoardsService) {}
 

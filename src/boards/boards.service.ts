@@ -28,7 +28,7 @@ export class BoardsService {
   }
 
   async remove(id: string) {
-    const board = await this.boardStorage.deleteBoard(id);
+    const board = await this.boardStorage.findOneBoard(id);
     if (board) {
       const tasks = await this.taskStorage.findAAllTasksByBoard(id);
       if (tasks) {
@@ -37,5 +37,6 @@ export class BoardsService {
         });
       }
     }
+    await this.boardStorage.deleteBoard(id);
   }
 }

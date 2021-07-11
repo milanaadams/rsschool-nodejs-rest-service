@@ -1,4 +1,5 @@
 import {
+  UseGuards,
   Controller,
   Get,
   Post,
@@ -10,8 +11,10 @@ import {
 import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
+import { AuthGuard } from '../login/auth.guard';
 
 @Controller('/boards/:boardId/tasks')
+@UseGuards(AuthGuard)
 export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
