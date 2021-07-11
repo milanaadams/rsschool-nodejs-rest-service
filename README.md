@@ -1,5 +1,36 @@
 # RS School REST service
 
+## NESTJS Запуск
+
+1. Замени переменные окружения в .env на свои.
+2. nest start -w
+3. Открой новую консоль и запусти файл с миграциями npm run migration:run
+4. запусти тесты: npm run test:auth
+
+## Running app with Docker
+
+npm run docker:start
+
+---
+
+wait for postgress fully load and be ready to accept connections (might take couple of minutes)
+
+## Migrate tables
+
+npm run migration:run
+
+---
+
+If it fails make sure you gave enough time for postgres to load into container and be ready to accept connections
+
+## Load admin user
+
+npm run seed:run
+
+## Stop Docker
+
+npm run docker:stop
+
 ## Prerequisites
 
 - Git - [Download & Install Git](https://git-scm.com/downloads).
